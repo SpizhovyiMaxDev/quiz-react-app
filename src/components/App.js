@@ -12,9 +12,7 @@ import Timer from "./Timer";
 
 import useLocalStorageState from "../hooks/useLoacaleStorageState";
 
-import { useEffect, useReducer } from "react";
-import { act } from "react-dom/test-utils";
-
+import { useEffect, useReducer } from "react"
 const SECONDS_PER_QUESTION = 30;
 
 const initialState = {
@@ -55,7 +53,7 @@ function reducer(state, action){
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const {status, questions, index, answer, points, highscore, secondsRemaning, prevsocre} = state;
+  const {status, questions, index, answer, points, highscore, secondsRemaning} = state;
   const [infoPrevScore, setPrevScore] = useLocalStorageState("", "PreviousScore");
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce((acc, val) => acc + val.points, 0)
