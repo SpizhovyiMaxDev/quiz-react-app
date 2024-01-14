@@ -38,7 +38,7 @@ body {
 }
 
 .main {
-  width: 50rem;
+  max-width: 50rem;
 }
 
 .app-header {
