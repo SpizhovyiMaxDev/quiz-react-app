@@ -38,11 +38,11 @@ body {
 }
 
 .main {
-  max-width: 50rem;
+  max-width: 60rem;
 }
 
 .app-header {
-  width: 66rem;
+  max-width: 66rem;
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
@@ -278,6 +278,6 @@ progress {
 
 @media (max-width:40em) {
   html{
-    font-size: 27%;
+    font-size: 35%;
   }
 }
