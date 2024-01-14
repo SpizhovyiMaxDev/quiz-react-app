@@ -56,7 +56,7 @@ function reducer(state, action){
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
   const {status, questions, index, answer, points, highscore, secondsRemaning, prevsocre} = state;
-  const [infoPrevScore, setPrevScore] = useLocalStorageState(0, "PreviousScore");
+  const [infoPrevScore, setPrevScore] = useLocalStorageState("", "PreviousScore");
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce((acc, val) => acc + val.points, 0)
   const percentage = (points / maxPossiblePoints) * 100;

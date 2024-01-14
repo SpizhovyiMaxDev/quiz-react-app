@@ -140,11 +140,11 @@ progress {
 
 .btn:not([disabled]):hover {
   background-color: var(--color-darkest);
-  color: var(--color-accent);
 }
 
 .btn-option:not([disabled]):hover {
   transform: translateX(1.2rem);
+  color: var(--color-accent);
 }
 
 .btn[disabled]:hover {
