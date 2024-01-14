@@ -278,6 +278,19 @@ progress {
 
 @media (max-width:40em) {
   html{
-    font-size: 35%;
+    font-size: 33%;
+  }
+  
+   h1{
+    font-size: 3.6rem;
+   }
+
+   img{
+    width:7rem;
+    margin-right: 3rem;
+   }
+
+  .main{
+    width:90%;
   }
 }
