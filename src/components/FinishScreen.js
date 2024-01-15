@@ -1,4 +1,4 @@
-function FinishScreen({points, maxPossiblePoints, highscore, dispatch, setPrevScore, percentage}){
+function FinishScreen({points, maxPossiblePoints, highscore, dispatch, setPrevScore, percentage, level}){
     
     let emoji;
     if (percentage === 100) emoji = "🥇";
@@ -9,13 +9,13 @@ function FinishScreen({points, maxPossiblePoints, highscore, dispatch, setPrevSc
 
     function restartQuiz(){
         dispatch({type:"restart"})
-        setPrevScore(`Last time you scored ${points} out of ${maxPossiblePoints} (${Math.ceil(percentage)}%) ${emoji}`);
+        setPrevScore(`At the ${level} level, you got ${points} out of ${maxPossiblePoints}, or (${Math.ceil(percentage)}%) ${emoji}`);
     }
 
     return (
         <>
             <p className="result">
-                You scored <strong>{points}</strong> out of {maxPossiblePoints} ({Math.ceil(percentage)}%) {emoji} 
+            At the <strong>{level}</strong>, you got <strong>{points}</strong> out of {maxPossiblePoints}, or ({Math.ceil(percentage)}%) {emoji} 
             </p>
             <p className = "highscore">
                Highscore: {highscore} points

@@ -134,6 +134,250 @@
       ],
       "correctOption": 3,
       "points": 20
+    },
+    {
+      "question": "What is the purpose of the 'useMemo' hook in React?",
+      "options": [
+        "To manage side effects",
+        "To memoize a function and cache its result",
+        "To update the component state",
+        "To create a reference to a DOM element"
+      ],
+      "correctOption": 1,
+      "points": 30
+    },
+    {
+      "question": "Which method is used to fetch data in React?",
+      "options": [
+        "fetchData()",
+        "fetchDataFromAPI()",
+        "fetch()",
+        "getData()"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What is the role of 'key' prop in React lists?",
+      "options": [
+        "To identify the list in the component tree",
+        "To provide a unique identifier for each list item",
+        "To specify the position of the list in the DOM",
+        "To add styling to the list items"
+      ],
+      "correctOption": 1,
+      "points": 20
+    },
+    {
+      "question": "Which lifecycle method is invoked after a component is inserted into the DOM?",
+      "options": [
+        "componentWillUnmount",
+        "componentDidMount",
+        "componentWillMount",
+        "componentDidUpdate"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "What does the 'shouldComponentUpdate' method determine?",
+      "options": [
+        "If a component should update based on new state or props",
+        "If a component should render for the first time",
+        "If a component should unmount",
+        "If a component should only update once"
+      ],
+      "correctOption": 0,
+      "points": 20
+    },
+    {
+      "question": "Which of the following is NOT a valid hook in React?",
+      "options": [
+        "useEffect",
+        "useCallback",
+        "useFetch",
+        "useReducer"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the 'React.Fragment' component?",
+      "options": [
+        "To create functional components",
+        "To group multiple elements without adding extra nodes to the DOM",
+        "To provide styling to the components",
+        "To handle asynchronous operations"
+      ],
+      "correctOption": 1,
+      "points": 10
+    },
+    {
+      "question": "What is the concept of 'lifting state up' in React?",
+      "options": [
+        "Passing state from parent to child components",
+        "Passing state from child to parent components",
+        "Encapsulating state within a component",
+        "Ignoring state management in React"
+      ],
+      "correctOption": 0,
+      "points": 20
+    },
+    {
+      "question": "Which method is used for conditional rendering in React?",
+      "options": [
+        "renderIf()",
+        "conditionalRender()",
+        "renderConditionally()",
+        "render()"
+      ],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the 'useContext' hook in React?",
+      "options": [
+        "To manage component context",
+        "To create reusable components",
+        "To update component state",
+        "To handle component lifecycle methods"
+      ],
+      "correctOption": 0,
+      "points": 30
+    },
+    {
+      "question": "How can you optimize performance in React applications?",
+      "options": [
+        "Using class components",
+        "Avoiding PureComponent",
+        "Memoizing functions",
+        "Having a complex component hierarchy"
+      ],
+      "correctOption": 2,
+      "points": 30
+    },
+    {
+      "question": "What is the significance of the 'dangerouslySetInnerHTML' prop in React?",
+      "options": [
+        "To set the inner HTML of a component securely",
+        "To prevent XSS attacks",
+        "To disable HTML rendering in a component",
+        "To set the inner HTML of a component with raw HTML content"
+      ],
+      "correctOption": 3,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the 'forwardRef' function in React?",
+      "options": [
+        "To forward props to child components",
+        "To create a reference to a DOM element",
+        "To handle component lifecycle methods",
+        "To pass refs through components"
+      ],
+      "correctOption": 3,
+      "points": 30
+    },
+    {
+      "question": "Which method is used to create a controlled input in React?",
+      "options": [
+        "onChange",
+        "onSubmit",
+        "onClick",
+        "onInput"
+      ],
+      "correctOption": 0,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the 'ErrorBoundary' component in React?",
+      "options": [
+        "To handle errors within a component",
+        "To intentionally break the application",
+        "To display generic error messages",
+        "To catch errors during rendering"
+      ],
+      "correctOption": 0,
+      "points": 20
+    },
+    {
+      "question": "What is the significance of the 'displayName' property in React?",
+      "options": [
+        "To set the name of a functional component",
+        "To define the display name of a class component",
+        "To hide the component name in the developer tools",
+        "To specify the order of rendering in the DOM"
+      ],
+      "correctOption": 1,
+      "points": 30
+    },
+    {
+      "question": "How can you handle forms in React?",
+      "options": [
+        "Using only controlled components",
+        "Using only uncontrolled components",
+        "A mix of controlled and uncontrolled components",
+        "Forms are not supported in React"
+      ],
+      "correctOption": 2,
+      "points": 10
+    },
+    {
+      "question": "What is the purpose of the 'React.StrictMode' component?",
+      "options": [
+        "To enable strict mode for the entire application",
+        "To display warnings in the console",
+        "To optimize component rendering",
+        "To disable certain features in React"
+      ],
+      "correctOption": 0,
+      "points": 30
+    },
+    {
+      "question": "Which method is used to prevent the default behavior of an event in React?",
+      "options": [
+        "preventDefault()",
+        "stopPropagation()",
+        "haltEvent()",
+        "disableEvent()"
+      ],
+      "correctOption": 0,
+      "points": 20
+    },
+    
+
+    {
+      "question": "What is the purpose of the 'useReducer' hook in React?",
+      "options": [
+        "To manage component context",
+        "To create reusable components",
+        "To handle complex state logic in a predictable way",
+        "To update component state"
+      ],
+      "correctOption": 2,
+      "points": 20
+    },
+    {
+      "question": "Which method is used to handle asynchronous operations in React?",
+      "options": [
+        "async/await",
+        "Promise.then()",
+        "setInterval()",
+        "setTimeout()"
+      ],
+      "correctOption": 0,
+      "points": 30
+    },
+    {
+      "question": "What is the significance of the 'useEffect' cleanup function?",
+      "options": [
+        "To clean up sideeffectd on each re-render, before the useEffect is executed, or when the component unmounts.",
+        "To disable certain features in React",
+        "To optimize component rendering",
+        "To handle component context"
+      ],
+      "correctOption": 0,
+      "points": 30
     }
   ]
 }

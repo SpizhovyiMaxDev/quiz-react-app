@@ -8,7 +8,9 @@
   --color-accent: #ffa94d;
 }
 
-@import url("https://fonts.googleapis.com/css2?family=Codystar&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Mulish:ital,wght@1,600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
 
 * {
   margin: 0;
@@ -27,6 +29,7 @@ body {
   color: var(--color-light);
   background-color: var(--color-darkest);
   padding: 3.2rem;
+  font-family: 'Mulish', sans-serif;
   overflow-x: hidden;
 }
 
@@ -65,7 +68,8 @@ img {
 }
 
 h1 {
-  font-family: "Codystar";
+  font-family: 'Bangers', system-ui;
+  letter-spacing: 0.5rem;
   font-size: 5.6rem;
 }
 
@@ -120,10 +124,19 @@ progress {
 }
 
 .btn-container{
+  margin:1.5rem 0;
   width: 100%;
   display: flex;
   justify-content:center;
   align-items: center;
+  flex-wrap: wrap;
+}
+
+.gap-05{
+  gap:0.5rem;
+}
+
+.gap-4{
   gap: 4rem;
 }
 
@@ -155,6 +168,15 @@ progress {
 
 .btn-ui {
   float: right;
+}
+
+.btn-level{
+  border-radius: 0;
+}
+
+.active{
+  background-color: var(--color-dark);
+  color: var(--color-accent);
 }
 
 .options {
@@ -189,7 +211,7 @@ progress {
   color: var(--color-light);
   border-radius: 100px;
   text-align: center;
-  padding: 2rem 0;
+  padding: 2rem;
   font-size: 2rem;
   font-weight: 500;
   margin-bottom: 1.6rem;
@@ -276,6 +298,10 @@ progress {
   html{
     font-size: 45%;
   }
+
+  .main{
+    width:90%;
+  }
 }
 
 @media (max-width:40em) {
@@ -294,8 +320,4 @@ progress {
    img{
     width:10rem;
    }
-
-  .main{
-    width:90%;
-  }
 }

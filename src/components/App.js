@@ -16,6 +16,7 @@ import { useEffect, useReducer } from "react"
 const SECONDS_PER_QUESTION = 30;
 
 const initialState = {
+  data:[],
   questions:[],
   // error, ready, loading, active, finished
   status:"loading",
@@ -24,28 +25,73 @@ const initialState = {
   points:0,
   highscore:0,
   secondsRemaning:null,
+  level:"",
 }
 
+const levelInfo = {
+  beginner:10,
+  intermidiate:20,
+  advanced:30,
+}
 
 function reducer(state, action){
   switch(action.type){
     case "dataRecieved":
-      return {...state, questions: action.payload, status:"ready"}
+      return {
+        ...state, 
+        data: action.payload, 
+        questions: action.payload, 
+        status:"ready"
+      }
+    case "setQuestions": 
+        return {
+          ...state,
+          level:action.payload,
+          questions: levelInfo[action.payload] ? state.data.filter(question => question.points === levelInfo[action.payload]) : [...state.data],
+        } 
     case "dataFailed":
-      return {...state, status:"error" } 
+      return {
+        ...state, 
+        status:"error" 
+      } 
     case "active":
-       return {...state, status: "active", secondsRemaning: state.questions.length * SECONDS_PER_QUESTION}
+      return {
+        ...state, 
+        status: "active", 
+        secondsRemaning: state.questions.length * SECONDS_PER_QUESTION, 
+      }
     case "newAnswer":
        const question = state.questions.at(state.index)
-       return {...state, answer:action.payload, points: action.payload === question.correctOption ? state.points + question.points : state.points}
+       return {
+        ...state, 
+        answer:action.payload, 
+        points: action.payload === question.correctOption ? state.points + question.points : state.points
+      }
     case "nextAnswer":
-      return {...state, index: state.index + 1, answer:null}
+      return {
+        ...state, 
+        index: state.index + 1, 
+        answer:null
+      }
     case "finished":
-      return {...state, status: "finished", highscore: state.points > state.highscore ? state.points : state.highscore}
+      return {
+        ...state, 
+        status: "finished", 
+        highscore: state.points > state.highscore ? state.points : state.highscore
+      }
     case "restart":
-      return {...initialState, questions:state.questions, status:"ready"};
+      return {
+        ...initialState, 
+        data: state.data,
+        questions: [...state.data], 
+        status:"ready"
+      };
     case "tick":
-      return {...state, secondsRemaning: state.secondsRemaning - 1, status: state.secondsRemaning > 0 ? state.status : "finished"}
+      return {
+        ...state, 
+        secondsRemaning: state.secondsRemaning - 1, 
+        status: state.secondsRemaning > 0 ? state.status : "finished"
+      }
     default:
       throw new Error("Action unknown")
   }
@@ -53,7 +99,7 @@ function reducer(state, action){
 
 function App() {
   const [state, dispatch] = useReducer(reducer, initialState);
-  const {status, questions, index, answer, points, highscore, secondsRemaning} = state;
+  const {status, questions, index, answer, points, highscore, secondsRemaning, level} = state;
   const [infoPrevScore, setPrevScore] = useLocalStorageState("", "PreviousScore");
   const numQuestions = questions.length;
   const maxPossiblePoints = questions.reduce((acc, val) => acc + val.points, 0)
@@ -62,7 +108,8 @@ function App() {
   useEffect(function(){
     (async function(){
       try{
-        const res = await fetch(`https://my-json-server.typicode.com/SpizhovyiMaxDev/react-quiz-json-server/questions`);
+        const res = await fetch(`http://localhost:8000/questions`);
+        // https://my-json-server.typicode.com/
         const data = await res.json();
         dispatch({type:"dataRecieved", payload:data});
       } catch(err){
@@ -88,7 +135,7 @@ function App() {
               </Footer>
             </>
           }
-          {status === "finished" && <FinishScreen setPrevScore = {setPrevScore} dispatch = {dispatch} points = {points} maxPossiblePoints={maxPossiblePoints} highscore = {highscore} percentage={percentage}/>}
+          {status === "finished" && <FinishScreen level={level} setPrevScore = {setPrevScore} dispatch = {dispatch} points = {points} maxPossiblePoints={maxPossiblePoints} highscore = {highscore} percentage={percentage}/>}
           {status === "error" && <Error />}
         </Main>
     </div>
