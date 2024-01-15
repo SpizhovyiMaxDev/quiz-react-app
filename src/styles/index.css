@@ -31,6 +31,7 @@ body {
 }
 
 .app {
+  padding:9.8rem 0;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -43,6 +44,7 @@ body {
 
 .app-header {
   max-width: 66rem;
+  gap:4rem;
   margin-bottom: 4rem;
   display: flex;
   align-items: center;
@@ -278,16 +280,19 @@ progress {
 
 @media (max-width:40em) {
   html{
-    font-size: 33%;
+    font-size: 40%;
   }
   
    h1{
-    font-size: 3.6rem;
+    font-size: 4.4rem;
+   }
+
+   .app-header{
+    flex-direction: column;
    }
 
    img{
-    width:7rem;
-    margin-right: 3rem;
+    width:10rem;
    }
 
   .main{
