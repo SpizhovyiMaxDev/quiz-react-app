@@ -25,7 +25,7 @@ const levelInfo = {
 
 const SECONDS_PER_QUESTION = 30;
   
-  function reducer(state, action){
+function reducer(state, action){
     switch(action.type){
       case "dataRecieved":
         return {
