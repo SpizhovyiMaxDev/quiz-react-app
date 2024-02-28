@@ -1,5 +1,8 @@
-function FinishScreen({points, maxPossiblePoints, highscore, dispatch, setPrevScore, percentage, level}){
-    
+import { useQuiz } from "../contexts/QuizContext";
+
+function FinishScreen(){
+    const {points, maxPossiblePoints, highscore, handleDispatch, setPrevScore, percentage, level, infoPrevScore} = useQuiz();
+
     let emoji;
     if (percentage === 100) emoji = "🥇";
     if (percentage >= 80 && percentage < 100) emoji = "🎉";
@@ -7,8 +10,7 @@ function FinishScreen({points, maxPossiblePoints, highscore, dispatch, setPrevSc
     if (percentage >= 0 && percentage < 50) emoji = "🤨";
     if (percentage === 0) emoji = "🤦‍♂️";
 
-    function restartQuiz(){
-        dispatch({type:"restart"})
+    function saveResults(){
         setPrevScore(`At the ${level} level, you got ${points} out of ${maxPossiblePoints}, or (${Math.ceil(percentage)}%) ${emoji}`);
     }
 
@@ -20,9 +22,14 @@ function FinishScreen({points, maxPossiblePoints, highscore, dispatch, setPrevSc
             <p className = "highscore">
                Highscore: {highscore} points
             </p>
-            <button className="btn btn-ui" onClick = {restartQuiz}>
-                Restart quiz
-            </button>
+            <div className = "btn-container gap-4">     
+                <button className="btn btn-ui" onClick = {saveResults}>
+                    {!infoPrevScore ? "Save the Results":"Saved"}
+                </button>
+                <button className="btn btn-ui" onClick = {() => handleDispatch("restart")}>
+                    Restart quiz
+                </button>
+            </div>
         </>
     )
 }

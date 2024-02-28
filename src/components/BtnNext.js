@@ -1,4 +1,7 @@
-function BtnNext({ answer, dispatch, index, numQuestions }){    
+import { useQuiz } from "../contexts/QuizContext";
+
+function BtnNext(){    
+    const { answer, handleDispatch, index, numQuestions } = useQuiz();
     if(answer === null)return;
     let name = "";
 
@@ -10,7 +13,7 @@ function BtnNext({ answer, dispatch, index, numQuestions }){
     })()
 
     return (
-        <button onClick={() => dispatch({type:name})} className = "btn btn-ui"> {name === "finished" ? "Finish" : "Next"} </button>
+        <button onClick={() => handleDispatch(name)} className = "btn btn-ui"> {name === "finished" ? "Finish" : "Next"} </button>
     )
 }
 
