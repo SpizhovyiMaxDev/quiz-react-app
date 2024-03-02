@@ -142,7 +142,7 @@ function useQuiz(){
     const context = useContext(QuizContext);
     console.log(context)
     if(!context)
-        throw new Error("💥Please make sure tht you are using useQuiz hook inside of the provider !!!");
+        throw new Error("💥Please make sure that you are using useQuiz hook inside of the provider !!!");
 
     return context;
 }
